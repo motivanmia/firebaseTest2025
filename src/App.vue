@@ -1,22 +1,18 @@
 <script setup>
-import { collection, getDocs } from 'firebase/firestore'
-import { db } from '@/lib/firebase'
-const testFirestore = async () => {
-  try {
-    const querySnapshot = await getDocs(collection(db, 'test'))
-    debugger
-    querySnapshot.forEach(doc => {
-      console.log(`${doc.id} =>`, doc.data())
-    })
-    
-  } catch (error) {
-    console.error(error);
-    
+  import { collection, getDocs } from 'firebase/firestore'
+  import { db } from '@/lib/firebase'
+  const testFirestore = async () => {
+    try {
+      const querySnapshot = await getDocs(collection(db, 'messages'))
+      querySnapshot.forEach((doc) => {
+        console.log(`${doc.id} =>`, doc.data())
+      })
+    } catch (error) {
+      console.error(error)
+    }
   }
-}
 
-testFirestore()
-
+  testFirestore()
 </script>
 
 <template>
