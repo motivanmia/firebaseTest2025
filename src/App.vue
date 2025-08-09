@@ -16,7 +16,12 @@
 </script>
 
 <template>
-  <h1>You did it!</h1>
+  <h1>Firestore Chat</h1>
+  <nav>
+    <RouterLink to="/">Home</RouterLink>
+    <br />
+    <RouterLink to="/chat">Chat</RouterLink>
+  </nav>
 </template>
 
 <style scoped></style>
